@@ -12,18 +12,14 @@ export default function Breadcrumbs() {
 
   const segments = pathname.split("/").filter(Boolean);
 
-  // Only show breadcrumbs for /blog, /projects, /work and their subpaths
   const allowedRoots = ["blog", "projects", "work"];
   const isAllowed = segments.length > 0 && allowedRoots.includes(segments[0]);
 
-  // Validate subpath: only show breadcrumbs if the root path exists
   let showBreadcrumbs = false;
   if (isAllowed) {
     if (segments.length === 1) {
-      // Only /blog, /projects, /work
       showBreadcrumbs = true;
     } else if (segments.length === 2) {
-      // Dynamically get valid slugs from imported data
       const validSlugs: Record<string, string[]> = {
         blog: blog.map((item) => item.slug),
         projects: projects.map((item) => item.slug),
@@ -36,13 +32,11 @@ export default function Breadcrumbs() {
   return (
     <div className="flex items-center gap-1 text-lg text-black dark:text-white my-auto">
       <Link href="/" className="hover:text-blue-400 font-semibold">
-        {/* Initials on mobile */}
-        <span className="block md:hidden">JD</span>
-        {/* Full name on desktop */}
-        <span className="hidden md:inline">John Doe</span>
+        <span className="block md:hidden">FN</span>
+
+        <span className="hidden md:inline">Farhan Nugraha</span>
       </Link>
 
-      {/* Crumbs part: show only on mobile, not on desktop */}
       <span className="flex md:hidden items-center gap-1">
         {showBreadcrumbs &&
           segments.map((segment, i) => {
