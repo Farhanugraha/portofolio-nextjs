@@ -1,5 +1,6 @@
 "use client";
 
+import ViewAllHeader from "@/components/ViewAllHeader";
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -74,6 +75,18 @@ export default function Home() {
             })}
           </div>
         </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-center mt-10 mb-6"
+      >
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          &#169; {new Date().getFullYear()} Farhan Nugraha. All rights reserved.
+        </p>
       </motion.div>
     </section>
   );
