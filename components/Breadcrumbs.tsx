@@ -12,7 +12,7 @@ export default function Breadcrumbs() {
 
   const segments = pathname.split("/").filter(Boolean);
 
-  const allowedRoots = ["blog", "projects", "work"];
+  const allowedRoots = ["blog", "projects", "experience"];
   const isAllowed = segments.length > 0 && allowedRoots.includes(segments[0]);
 
   let showBreadcrumbs = false;
@@ -23,7 +23,7 @@ export default function Breadcrumbs() {
       const validSlugs: Record<string, string[]> = {
         blog: blog.map((item) => item.slug),
         projects: projects.map((item) => item.slug),
-        work: work.map((item) => item.slug),
+        experience: work.map((item) => item.slug),
       };
       showBreadcrumbs = validSlugs[segments[0]]?.includes(segments[1]) ?? false;
     }
@@ -46,7 +46,7 @@ export default function Breadcrumbs() {
               .replace(/\b\w/g, (l) => l.toUpperCase());
             return (
               <span key={href} className="flex items-center gap-1">
-                <span className="text-gray-500">/</span>
+                <span className="text-gray-500">|</span>
                 <Link
                   href={href}
                   className="text-black dark:text-white hover:text-blue-400 transition-colors"

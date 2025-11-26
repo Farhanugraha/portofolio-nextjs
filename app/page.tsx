@@ -2,6 +2,9 @@
 
 import ViewAllHeader from "@/components/ViewAllHeader";
 import { motion } from "framer-motion";
+import work from "@/data/work";
+import WorkItem from "@/components/WorkItem";
+import ProjectTile from "@/components/ProjectTile";
 import Image from "next/image";
 import {
   FaMapMarkerAlt,
@@ -11,6 +14,7 @@ import {
   FaMobileAlt,
   FaDatabase,
 } from "react-icons/fa";
+import projects from "@/data/projects";
 
 export default function Home() {
   return (
@@ -37,7 +41,7 @@ export default function Home() {
           Hi, I&apos;m Farhan Nugraha 👋
         </h1>
 
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left mb-6">
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left mb-6 text-justify leading-relaxed">
           I&apos;m an Informatics Engineering graduate with experience across
           mobile development, full-stack web development, and foundational data
           engineering workflows. I enjoy turning ideas into functional,
@@ -45,7 +49,7 @@ export default function Home() {
           frameworks and solid database design.
         </p>
 
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left">
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left text-justify leading-relaxed">
           Outside of building software, I like exploring new tools,
           experimenting with different approaches, and learning things that help
           me work more efficiently. Continuous growth—both technically and
@@ -91,9 +95,63 @@ export default function Home() {
         viewport={{ once: true }}
         className="text-center mt-10 mb-6"
       >
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        {/* <p className="text-sm text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} Farhan Nugraha. All rights reserved.
-        </p>
+        </p> */}
+      </motion.div>
+      {/* Experience */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="mt-16"
+      >
+        <ViewAllHeader
+          title="Experience"
+          pageUrl="/experience"
+          itemCount={work.length}
+        />
+        <div className="grid gap-4">
+          {work.slice(0, 3).map((job, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <WorkItem {...job} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="mt-16"
+      >
+        <ViewAllHeader
+          title="Recent Projects"
+          pageUrl="/projects"
+          itemCount={projects.length}
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          {projects.slice(0, 4).map((proj) => (
+            <motion.div
+              key={proj.slug}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <ProjectTile key={proj.slug} {...proj} />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

@@ -29,7 +29,7 @@ export default function NavigationMenu() {
               navItems.length
             })`,
             transform: `translateX(calc(${activeIndex} * (100% + 0.125rem)))`,
-            border: "2px solid #3B82F6", // blue-500
+            border: "2px solid #3B82F6",
             borderRadius: "9999px",
             background: "transparent",
             boxShadow: "0 2px 8px 0 rgba(59,130,246,0.10)",
@@ -56,7 +56,6 @@ export default function NavigationMenu() {
               >
                 {name}
               </Link>
-              {/* Invisible divider except last item */}
               {idx < navItems.length - 1 && (
                 <span className="mx-0.5 h-5 w-px" aria-hidden="true"></span>
               )}
