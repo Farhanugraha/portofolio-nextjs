@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import work from "@/data/work";
 import WorkItem from "@/components/WorkItem";
 import ProjectTile from "@/components/ProjectTile";
+import StackIcon from "tech-stack-icons";
 import Image from "next/image";
 import {
   FaMapMarkerAlt,
@@ -42,19 +43,19 @@ export default function Home() {
         </h1>
 
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left mb-6 text-justify leading-relaxed">
-          I&apos;m an Informatics Engineering graduate with experience across
-          mobile development, full-stack web development, and foundational data
-          engineering workflows. I enjoy turning ideas into functional,
-          user-focused applications by combining clean architecture with modern
-          frameworks and solid database design.
+          I am an Informatics Engineering graduate with hands-on experience in
+          mobile application development, full-stack web development, and data
+          engineering fundamentals. I specialize in building scalable,
+          maintainable, and user-centric applications by leveraging modern
+          frameworks, clean architecture principles, and robust database design.
         </p>
 
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left text-justify leading-relaxed">
-          Outside of building software, I like exploring new tools,
-          experimenting with different approaches, and learning things that help
-          me work more efficiently. Continuous growth—both technically and
-          personally—is something I value deeply, and I try to improve a little
-          every day.
+          Beyond software development, I continuously explore emerging tools and
+          technologies, optimize workflows, and adopt best practices to enhance
+          productivity. I am committed to continuous professional and technical
+          growth, consistently refining my skills to deliver high-quality
+          solutions.
         </p>
 
         <div className="mt-8 text-center">
@@ -84,6 +85,38 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <h2 className="text-3xl font-bold mb-4">Skills & Expertise</h2>
+
+          <div className="flex flex-wrap justify-center gap-6 px-4 max-w-4xl mx-auto">
+            {[
+              "java",
+              "kotlin",
+              "php",
+              "python",
+              "js",
+              "go",
+              "nextjs",
+              "react",
+              "spring",
+              "laravel",
+              "docker",
+              "tailwindcss",
+              "mysql",
+              "postgresql",
+              "android",
+              "git",
+              "figma",
+            ].map((iconName, index) => (
+              <StackIcon
+                key={index}
+                name={iconName}
+                className="text-blue-500 dark:text-blue-400 w-12 h-12 transition hover:scale-110"
+              />
+            ))}
           </div>
         </div>
       </motion.div>
