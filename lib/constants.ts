@@ -5,6 +5,7 @@ export const navItems = [
   { name: "Experience", path: "/experience" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/#contact" },
 ];
 
 export const techStackMap: Record<string, string> = {
