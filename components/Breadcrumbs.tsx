@@ -23,7 +23,7 @@ export default function Breadcrumbs() {
       const validSlugs: Record<string, string[]> = {
         blog: blog.map((item) => item.slug),
         projects: projects.map((item) => item.slug),
-        experience: work.map((item) => item.slug),
+        work: work.map((item) => item.slug),
       };
       showBreadcrumbs = validSlugs[segments[0]]?.includes(segments[1]) ?? false;
     }
