@@ -11,7 +11,7 @@ export default function WorkNotFound() {
         of work experience.
       </p>
       <Link
-        href="/work"
+        href="/experience"
         className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded transition-colors shadow focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
       >
         <FaArrowLeft className="inline-block mr-2" /> Back to /work

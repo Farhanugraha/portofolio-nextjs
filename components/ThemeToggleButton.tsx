@@ -4,9 +4,6 @@ import { FaMoon, FaSun } from "react-icons/fa6";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-/**
- * A functional component that renders a button to toggle between light and dark themes.
- */
 export default function ThemeToggleButton() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();

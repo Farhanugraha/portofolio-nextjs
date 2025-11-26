@@ -2,7 +2,7 @@ import packageJson from "../package.json";
 
 export const navItems = [
   { name: "Home", path: "/" },
-  { name: "Work", path: "/work" },
+  { name: "Experience", path: "/experience" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
 ];

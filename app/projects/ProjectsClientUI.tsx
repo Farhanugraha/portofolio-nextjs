@@ -4,28 +4,28 @@ import { Suspense, useState, useEffect } from "react";
 import FilterDropdown from "@/components/FilterDropdown";
 import SortDropdown from "@/components/SortDropdown";
 import ActiveFilterChips from "@/components/ActiveFilterChips";
-import WorkItem from "@/components/WorkItem";
+import ProjectTile from "@/components/ProjectTile";
 import PaginationControls from "@/components/PaginationControls";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaFrown } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
-import { WorkItemProps } from "@/lib/type";
+import { ProjectProps } from "@/lib/type";
 
-export default function WorkClientUI({
-  uniqueCompanies,
-  selectedCompanies,
+export default function ProjectsClientUI({
+  uniqueTechStack,
+  selectedTechStack,
   sortOrder,
-  filteredWorkItems,
-  paginatedWorkItems,
+  filteredProjects,
+  paginatedProjects,
   currentPage,
   totalPages,
   baseUrl,
 }: {
-  uniqueCompanies: { company: string; count: number }[];
-  selectedCompanies: string[];
+  uniqueTechStack: { tech: string; count: number }[];
+  selectedTechStack: string[];
   sortOrder: "newest" | "oldest";
-  filteredWorkItems: WorkItemProps[];
-  paginatedWorkItems: WorkItemProps[];
+  filteredProjects: ProjectProps[];
+  paginatedProjects: ProjectProps[];
   currentPage: number;
   totalPages: number;
   baseUrl: string;
@@ -33,26 +33,24 @@ export default function WorkClientUI({
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [companyDrafts, setCompanyDrafts] =
-    useState<string[]>(selectedCompanies);
+  const [techStackDrafts, setTechStackDrafts] =
+    useState<string[]>(selectedTechStack);
 
   useEffect(() => {
-    setCompanyDrafts(selectedCompanies);
-  }, [selectedCompanies]);
+    setTechStackDrafts(selectedTechStack);
+  }, [selectedTechStack]);
 
-  const handleToggleCompany = (company: string) => {
-    setCompanyDrafts((prev) =>
-      prev.includes(company)
-        ? prev.filter((c) => c !== company)
-        : [...prev, company]
+  const handleToggleTech = (tech: string) => {
+    setTechStackDrafts((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
     );
   };
 
   const handleApplyFilters = () => {
     const params = new URLSearchParams(searchParams.toString());
-    companyDrafts.length > 0
-      ? params.set("company", companyDrafts.join(","))
-      : params.delete("company");
+    techStackDrafts.length > 0
+      ? params.set("tech", techStackDrafts.join(","))
+      : params.delete("tech");
     params.delete("page");
     router.push(
       `${baseUrl}${params.toString() ? "?" + params.toString() : ""}`
@@ -60,16 +58,16 @@ export default function WorkClientUI({
   };
 
   const handleClearFilters = () => {
-    setCompanyDrafts([]);
+    setTechStackDrafts([]);
     const params = new URLSearchParams(searchParams.toString());
-    params.delete("company");
+    params.delete("tech");
     params.delete("page");
     router.push(
       `${baseUrl}${params.toString() ? "?" + params.toString() : ""}`
     );
   };
 
-  const handleSortChange = (order: "newest" | "oldest" | "desc" | "asc") => {
+  const handleSortChange = (order: "desc" | "newest" | "oldest" | "asc") => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("sort", order);
     params.delete("page");
@@ -78,20 +76,21 @@ export default function WorkClientUI({
     );
   };
 
-  const handleRemoveCompany = (company: string) => {
-    const newDrafts = companyDrafts.filter((c) => c !== company);
-    setCompanyDrafts(newDrafts);
+  const handleRemoveTech = (tech: string) => {
+    const newDrafts = techStackDrafts.filter((t) => t !== tech);
+    setTechStackDrafts(newDrafts);
+
     const params = new URLSearchParams(searchParams.toString());
     newDrafts.length > 0
-      ? params.set("company", newDrafts.join(","))
-      : params.delete("company");
+      ? params.set("tech", newDrafts.join(","))
+      : params.delete("tech");
     params.delete("page");
     router.push(
       `${baseUrl}${params.toString() ? "?" + params.toString() : ""}`
     );
   };
 
-  const handleClearAllCompanies = () => {
+  const handleClearAllTech = () => {
     handleClearFilters();
   };
 
@@ -101,16 +100,16 @@ export default function WorkClientUI({
         <div className="relative flex-grow md:flex-grow-0">
           <Suspense fallback={null}>
             <FilterDropdown
-              items={uniqueCompanies.map(({ company, count }) => ({
-                name: company,
+              items={uniqueTechStack.map(({ tech, count }) => ({
+                name: tech,
                 count,
               }))}
-              selectedItems={companyDrafts}
-              onToggle={handleToggleCompany}
+              selectedItems={techStackDrafts}
+              onToggle={handleToggleTech}
               onApply={handleApplyFilters}
               onClear={handleClearFilters}
-              placeholder="Filter by Company"
-              resultCount={filteredWorkItems.length}
+              placeholder="Filter by Tech"
+              resultCount={filteredProjects.length}
             />
           </Suspense>
         </div>
@@ -130,24 +129,25 @@ export default function WorkClientUI({
       </div>
 
       <ActiveFilterChips
-        filters={selectedCompanies}
-        onRemove={handleRemoveCompany}
+        filters={selectedTechStack}
+        onRemove={handleRemoveTech}
         onClearAll={
-          selectedCompanies.length > 1 ? handleClearAllCompanies : undefined
+          selectedTechStack.length > 1 ? handleClearAllTech : undefined
         }
       />
 
       <AnimatePresence mode="wait">
-        {filteredWorkItems.length > 0 ? (
+        {filteredProjects.length > 0 ? (
           <motion.div
-            key="work-items"
-            className="space-y-6 grid"
+            key="projects"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            {paginatedWorkItems.map((item) => (
-              <WorkItem key={item.slug} {...item} />
+            {paginatedProjects.map((project) => (
+              <ProjectTile key={project.slug} {...project} />
             ))}
           </motion.div>
         ) : (
@@ -161,11 +161,11 @@ export default function WorkClientUI({
           >
             <FaFrown className="text-4xl md:text-5xl mb-3 text-gray-400 dark:text-gray-500" />
             <p className="text-lg md:text-xl lg:text-2xl font-semibold">
-              No work items found
+              No projects found
             </p>
             <p className="text-sm md:text-base lg:text-lg mt-2 max-w-2xl">
-              The combination of selected company filters didn&apos;t match any
-              work items. Try changing or clearing your filters.
+              The combination of selected tech stack filters didn&apos;t match
+              any projects. Try changing or clearing your filters.
             </p>
           </motion.div>
         )}

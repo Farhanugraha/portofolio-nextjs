@@ -39,7 +39,7 @@ export default async function WorkPage(props: {
       }
     }
     params.set("sort", sortOrder);
-    redirect(`/work${params.toString() ? "?" + params.toString() : ""}`);
+    redirect(`/experience${params.toString() ? "?" + params.toString() : ""}`);
   }
 
   let selectedCompanies: string[] = [];
@@ -99,7 +99,7 @@ export default async function WorkPage(props: {
       paginatedWorkItems={paginatedWorkItems}
       currentPage={currentPage}
       totalPages={totalPages}
-      baseUrl="/work"
+      baseUrl="/experience"
     />
   );
 }
