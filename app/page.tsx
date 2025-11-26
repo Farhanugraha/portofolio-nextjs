@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import work from "@/data/work";
 import WorkItem from "@/components/WorkItem";
 import ProjectTile from "@/components/ProjectTile";
+import BlogPost from "@/components/BlogPost";
+import blog from "@/data/blog";
 import StackIcon from "tech-stack-icons";
 import Image from "next/image";
 import {
@@ -17,7 +19,14 @@ import {
 } from "react-icons/fa";
 import projects from "@/data/projects";
 
+import ContactForm from "@/components/ContactForm";
+
 export default function Home() {
+  const getTimeSafe = (dateStr: string | undefined) => {
+    const date = new Date(dateStr ?? "");
+    return isNaN(date.getTime()) ? 0 : date.getTime();
+  };
+
   return (
     <section className="px-4 max-w-4xl mx-auto">
       <motion.div
@@ -43,8 +52,8 @@ export default function Home() {
         </h1>
 
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left mb-6 text-justify leading-relaxed">
-          I am an Informatics Engineering graduate with hands-on experience in
-          mobile application development, full-stack web development, and data
+          I am a Computer Science graduate with hands-on experience in mobile
+          application development, full-stack web development, and data
           engineering fundamentals. I specialize in building scalable,
           maintainable, and user-centric applications by leveraging modern
           frameworks, clean architecture principles, and robust database design.
@@ -67,7 +76,7 @@ export default function Home() {
                 icon: FaUniversity,
                 label: "Informatics Graduate @ Universitas Sriwijaya",
               },
-              { icon: FaMapMarkerAlt, label: "Palembang, Indonesia" },
+              { icon: FaMapMarkerAlt, label: "Indonesia" },
               { icon: FaLanguage, label: "Indonesian & English" },
               { icon: FaTools, label: "Full-Stack Developer" },
               { icon: FaMobileAlt, label: "Mobile Developer" },
@@ -87,7 +96,16 @@ export default function Home() {
             })}
           </div>
         </div>
+      </motion.div>
 
+      {/* Skills */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="mt-16"
+      >
         <div className="mt-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Skills & Expertise</h2>
 
@@ -96,11 +114,13 @@ export default function Home() {
               "java",
               "kotlin",
               "php",
+              "go",
               "python",
               "js",
-              "go",
-              "nextjs",
+              "html5",
+              "css3",
               "react",
+              "nextjs",
               "spring",
               "laravel",
               "docker",
@@ -121,17 +141,6 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="text-center mt-10 mb-6"
-      >
-        {/* <p className="text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Farhan Nugraha. All rights reserved.
-        </p> */}
-      </motion.div>
       {/* Experience */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -160,6 +169,7 @@ export default function Home() {
         </div>
       </motion.div>
 
+      {/* Projects */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -181,11 +191,47 @@ export default function Home() {
               transition={{ duration: 1 }}
               viewport={{ once: true }}
             >
-              <ProjectTile key={proj.slug} {...proj} />
+              <ProjectTile {...proj} />
             </motion.div>
           ))}
         </div>
       </motion.div>
+
+      {/* Blog */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="mt-16 mb-12"
+      >
+        <ViewAllHeader
+          title="Recent Blog Posts"
+          pageUrl="/blog"
+          itemCount={blog.length}
+        />
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {blog
+            .slice()
+            .sort((a, b) => getTimeSafe(b.date) - getTimeSafe(a.date))
+            .slice(0, 3)
+            .map((post) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              >
+                <BlogPost {...post} />
+              </motion.div>
+            ))}
+        </div>
+      </motion.div>
+
+      <section id="contact">
+        <ContactForm />
+      </section>
     </section>
   );
 }
