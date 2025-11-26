@@ -7,7 +7,7 @@ import WorkItem from "@/components/WorkItem";
 import ProjectTile from "@/components/ProjectTile";
 import BlogPost from "@/components/BlogPost";
 import blog from "@/data/blog";
-import StackIcon from "tech-stack-icons";
+// import StackIcon from "tech-stack-icons";
 import Image from "next/image";
 import {
   FaMapMarkerAlt,
@@ -99,7 +99,7 @@ export default function Home() {
       </motion.div>
 
       {/* Skills */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -139,7 +139,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Experience */}
       <motion.div
