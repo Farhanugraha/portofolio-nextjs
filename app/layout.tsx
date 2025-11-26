@@ -8,6 +8,13 @@ import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+export const metadata: Metadata = {
+  title: "Farhan's Portofolio",
+  icons: {
+    icon: "/icons/favicon.ico",
+  },
+};
+
 const gabarito = Gabarito({
   variable: "--font-gabarito",
   subsets: ["latin"],
@@ -20,10 +27,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${gabarito.className} ${gabarito.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <title>Farhan's Portofolio</title>
-      </head>
-
       <body
         className={`antialiased flex flex-col min-h-screen transition-colors ${gabarito.className} ${gabarito.variable}`}
       >
