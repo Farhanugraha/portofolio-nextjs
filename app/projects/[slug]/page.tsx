@@ -104,15 +104,21 @@ export default async function ProjectPage(props: { params: pageParams }) {
         </div>
 
         <ul className="flex flex-wrap gap-4">
-          {frontmatter.techStack?.map((tech) => (
-            <li key={tech} className="flex items-center gap-2">
-              <StackIcon
-                name={techStackMap[tech] || tech}
-                className="w-[24px] h-[24px]"
-              />
-              <span>{tech}</span>
-            </li>
-          ))}
+          {frontmatter.techStack?.map((tech) => {
+            const iconName = techStackMap[tech];
+            return (
+              <li key={tech} className="flex items-center gap-2">
+                {iconName ? (
+                  <StackIcon name={iconName} className="w-[24px] h-[24px]" />
+                ) : (
+                  <div className="w-[24px] h-[24px] flex items-center justify-center text-xs font-medium bg-gray-300 dark:bg-gray-700 rounded">
+                    {tech[0]} {/* tampil huruf awal sebagai placeholder */}
+                  </div>
+                )}
+                <span>{tech}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

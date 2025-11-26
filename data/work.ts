@@ -13,7 +13,7 @@ const work = [
   {
     slug: "Srifotoncorp",
     company: "Sriwijaya Informatics Exhibition",
-    title: "Information Technology Developer",
+    title: "Information Technology Lead Developer",
     start: "Apr 2023",
     end: "Nov 2023",
     description:
@@ -24,7 +24,7 @@ const work = [
   {
     slug: "Hmiforg",
     company: "Himpunan Mahasiswa Informatika",
-    title: "Information Technology Lead Developer",
+    title: "Information Technology Staff",
     start: "Jan 2023",
     end: "Dec 2023",
     description:
@@ -34,12 +34,12 @@ const work = [
   },
   {
     slug: "Bangkitorg",
-    company: "Bangkit Academy",
+    company: "Bangkit Academy ",
     title: "Android Mobile Development Student",
     start: "Aug 2023",
     end: "Jan 2024",
     description:
-      "Assisted in developing HMIF web platform with Next.js for frontend and Laravel for backend integration.",
+      "Studied and developed Android applications with Kotlin, Jetpack Compose, and Firebase, building the DeepCare app with ML-powered ICU outcome predictions.",
     locations: ["On-site", "Palembang-Indonesia"],
     logoUrl: "/work/android100.svg",
   },
