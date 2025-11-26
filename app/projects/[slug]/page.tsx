@@ -109,10 +109,10 @@ export default async function ProjectPage(props: { params: pageParams }) {
             return (
               <li key={tech} className="flex items-center gap-2">
                 {iconName ? (
-                  <StackIcon name={iconName} className="w-[24px] h-[24px]" />
+                  <StackIcon name={iconName} className="w-6 h-6" />
                 ) : (
-                  <div className="w-[24px] h-[24px] flex items-center justify-center text-xs font-medium bg-gray-300 dark:bg-gray-700 rounded">
-                    {tech[0]} {/* tampil huruf awal sebagai placeholder */}
+                  <div className="w-6 h-6 flex items-center justify-center text-xs font-medium bg-gray-300 dark:bg-gray-700 rounded">
+                    {tech[0]}
                   </div>
                 )}
                 <span>{tech}</span>

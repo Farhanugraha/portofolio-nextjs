@@ -46,7 +46,7 @@ export function TimelineItem({
       className="relative mb-12 pl-8"
     >
       <motion.div
-        className="absolute left-[-10px] top-2 w-4 h-4 bg-blue-500 dark:bg-blue-400 rounded-full border-2 border-white dark:border-gray-900"
+        className="absolute left-2.5 top-2 w-4 h-4 bg-blue-500 dark:bg-blue-400 rounded-full border-2 border-white dark:border-gray-900"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}

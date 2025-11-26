@@ -27,7 +27,7 @@ export default function ViewAllHeader({
         <span className="group-hover:underline group-hover:decoration-transparent">
           View all ({itemCount})
         </span>
-        <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+        <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
       </Link>
     </div>
   );
