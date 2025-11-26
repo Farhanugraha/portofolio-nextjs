@@ -31,7 +31,7 @@ export default function WorkItem({
   logoUrl,
 }: WorkItemProps) {
   return (
-    <Link href={`/work/${slug}`} className="block group">
+    <Link href={`/experience/${slug}`} className="block group">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

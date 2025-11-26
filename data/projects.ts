@@ -1,6 +1,6 @@
 const projects = [
   {
-    slug: "project1",
+    slug: "Deepcareproject",
     title: "DeepCare : AI-Powered Medical App",
     image: "/project-A/projectA.jpg",
     description:
@@ -17,7 +17,7 @@ const projects = [
     ],
   },
   {
-    slug: "project-B",
+    slug: "Braintumorproject",
     title: "Brain Tumor Detection System",
     image: "/project-A/projectB.jpg",
     description:

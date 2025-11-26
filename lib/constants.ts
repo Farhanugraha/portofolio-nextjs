@@ -34,6 +34,19 @@ export const techStackMap: Record<string, string> = {
   "Spring Boot": "spring",
   Git: "git",
   GitLab: "gitlab",
+  Android: "android",
+  Kotlin: "kotlin",
+  "TensorFlow Lite": "python",
+  SQLite: "mysql",
+  TensorFlow: "",
+  Matplotlib: "",
+  "Google Colab": "colab",
+  Laravel: "laravel",
+  PHP: "php",
+  Bootstrap: "bootstrap5",
+  Blade: "laravel",
+  Streamlit: "streamlit",
+  Pytorch: "pytorch",
 };
 
 export const appVersion = packageJson.version;
