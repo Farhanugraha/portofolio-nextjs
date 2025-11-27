@@ -3,8 +3,8 @@ const work = [
     slug: "Bsbcorp",
     company: "Bank Sumsel Babel",
     title: "Information Technology Intern",
-    start: "Jul 2021",
-    end: "Aug 2021",
+    start: "Jul 2023",
+    end: "Aug 2023",
     description:
       "Developed a digital document platform and contributed to LMS/KPI system using Laravel, optimizing workflows and ensuring secure, reliable operation.",
     locations: ["On-site", "Palembang-Indonesia"],
