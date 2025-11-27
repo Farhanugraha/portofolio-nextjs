@@ -3,7 +3,7 @@ import { Suspense, useState, useEffect } from "react";
 import FilterDropdown from "@components/FilterDropdown";
 import SortDropdown from "@components/SortDropdown";
 import ActiveFilterChips from "@components/ActiveFilterChips";
-import WorkItem from "@components/WorkItem";
+import WorkItem from "../../components/WorkItem";
 import PaginationControls from "@components/PaginationControls";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaFrown } from "react-icons/fa";
