@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import blog from "@/data/blog";
-import work from "@/data/work";
-import projects from "@/data/projects";
+import blog from "../data/blog";
+import work from "../data/work";
+import projects from "../data/projects";
 import path from "path";
 
 export default function Breadcrumbs() {

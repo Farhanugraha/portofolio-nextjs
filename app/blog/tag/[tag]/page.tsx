@@ -1,7 +1,7 @@
 import Link from "next/link";
-import posts from "@/data/blog";
-import BlogPost from "@/components/BlogPost";
-import { BlogPostProps, tagPageParams } from "@/lib/type";
+import posts from "../../../../data/blog";
+import BlogPost from "../../../../components/BlogPost";
+import { BlogPostProps, tagPageParams } from "../../../../lib/type";
 import { FaArrowLeft, FaTag } from "react-icons/fa";
 
 /**

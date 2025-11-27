@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useEffect } from "react";
-import { navItems } from "@/lib/constants";
+import { navItems } from "../lib/constants";
 
 export default function MobileMenu({
   isOpen,

@@ -1,5 +1,5 @@
-import BlogPost from "@/components/BlogPost";
-import { BlogPostProps } from "@/lib/type";
+import BlogPost from "./BlogPost";
+import { BlogPostProps } from "../lib/type";
 
 /**
  * @description

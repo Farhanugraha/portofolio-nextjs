@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { BlogPostProps } from "@/lib/type";
-import BlogTag from "@/components/BlogTag";
+import { BlogPostProps } from "../lib/type";
+import BlogTag from "./BlogTag";
 
 export default function BlogPost({
   slug,

@@ -1,6 +1,6 @@
 import WorkClientUI from "./WorkClientUI";
 import WorkNotFound from "./WorkNotFound";
-import work from "@/data/work";
+import work from "../../data/work";
 import { redirect } from "next/navigation";
 
 export default async function WorkPage(props: {

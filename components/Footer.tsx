@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
-import { appVersion } from "@/lib/constants";
+import { appVersion } from "../lib/constants";
 
 export default function Footer() {
   return (

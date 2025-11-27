@@ -1,15 +1,15 @@
 "use client";
 
 import { Suspense, useState, useEffect } from "react";
-import FilterDropdown from "@/components/FilterDropdown";
-import SortDropdown from "@/components/SortDropdown";
-import ActiveFilterChips from "@/components/ActiveFilterChips";
-import BlogPost from "@/components/BlogPost";
-import PaginationControls from "@/components/PaginationControls";
+import FilterDropdown from "../../components/FilterDropdown";
+import SortDropdown from "../../components/SortDropdown";
+import ActiveFilterChips from "../../components/ActiveFilterChips";
+import BlogPost from "../../components/BlogPost";
+import PaginationControls from "../../components/PaginationControls";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaFrown } from "react-icons/fa";
 import { useRouter, useSearchParams } from "next/navigation";
-import { BlogPostProps } from "@/lib/type";
+import { BlogPostProps } from "../../lib/type";
 
 /**
  * Client component used to render the blog page from within the server component.
