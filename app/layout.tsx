@@ -22,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <head>
         <title>Farhan's Portofolio</title>
+        <link rel="icon" href="/icons/favicon.ico" />
       </head>
 
       <body
