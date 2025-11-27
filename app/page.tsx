@@ -3,7 +3,7 @@
 import ViewAllHeader from "@components/ViewAllHeader";
 import { motion } from "framer-motion";
 import work from "@data/work";
-import WorkItem from "../components/WorkItem";
+import WorkItem from "../components/WorkItems";
 import ProjectTile from "@components/ProjectTile";
 import BlogPost from "@components/BlogPost";
 import blog from "@data/blog";
