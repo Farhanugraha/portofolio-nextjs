@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import NavigationMenu from "@/components/NavigationMenu";
-import ThemeToggleButton from "@/components/ThemeToggleButton";
-import MobileMenuToggle from "@/components/MobileMenuToggle";
-import MobileMenu from "@/components/MobileMenu";
+import Breadcrumbs from "./Breadcrumbs";
+import NavigationMenu from "./NavigationMenu";
+import ThemeToggleButton from "./ThemeToggleButton";
+import MobileMenuToggle from "./MobileMenuToggle";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

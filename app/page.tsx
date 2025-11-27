@@ -1,13 +1,13 @@
 "use client";
 
-import ViewAllHeader from "@/components/ViewAllHeader";
+import ViewAllHeader from "../components/ViewAllHeader";
 import { motion } from "framer-motion";
-import work from "@/data/work";
-import WorkItem from "@/components/WorkItem";
-import ProjectTile from "@/components/ProjectTile";
-import BlogPost from "@/components/BlogPost";
-import blog from "@/data/blog";
-import ContactForm from "@/components/ContactForm";
+import work from "../data/work";
+import WorkItem from "../components/WorkItem";
+import ProjectTile from "../components/ProjectTile";
+import BlogPost from "../components/BlogPost";
+import blog from "../data/blog";
+import ContactForm from "../components/ContactForm";
 import StackIcon from "tech-stack-icons";
 import Image from "next/image";
 import {
@@ -18,7 +18,7 @@ import {
   FaMobileAlt,
   FaDatabase,
 } from "react-icons/fa";
-import projects from "@/data/projects";
+import projects from "../data/projects";
 
 export default function Home() {
   const getTimeSafe = (dateStr: string | undefined) => {

@@ -1,4 +1,4 @@
-import { BlogPostProps } from "@/lib/type";
+import { BlogPostProps } from "../lib/type";
 
 const posts: BlogPostProps[] = [
   {

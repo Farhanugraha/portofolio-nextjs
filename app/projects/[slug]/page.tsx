@@ -4,16 +4,16 @@ import fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import Link from "next/link";
-import projects from "@/data/projects";
+import projects from "../../../data/projects";
 import StackIcon from "tech-stack-icons";
 import { BsStack, BsCardImage } from "react-icons/bs";
 import { FaUsers, FaUserTie, FaClock, FaGithub } from "react-icons/fa";
-import AnimatedArticle from "@/components/AnimatedArticle";
-import { techStackMap } from "@/lib/constants";
-import { pageParams } from "@/lib/type";
-import BackToPageButton from "@/components/BackToPageButton";
+import AnimatedArticle from "../../../components/AnimatedArticle";
+import { techStackMap } from "../../../lib/constants";
+import { pageParams } from "../../../lib/type";
+import BackToPageButton from "../../../components/BackToPageButton";
 import remark_gfm from "remark-gfm";
-import ImageCarouselWrapper from "@/components/ImageCarouselWrapper";
+import ImageCarouselWrapper from "../../../components/ImageCarouselWrapper";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({

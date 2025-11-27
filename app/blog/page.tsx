@@ -1,6 +1,6 @@
 import BlogClientUI from "./BlogClientUI";
 import BlogNotFound from "./BlogNotFound";
-import posts from "@/data/blog";
+import posts from "../../data/blog";
 import { redirect } from "next/navigation";
 
 export default async function BlogPage(props: {
