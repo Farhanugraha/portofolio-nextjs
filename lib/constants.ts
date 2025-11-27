@@ -1,37 +1,4 @@
 import packageJson from "../package.json";
-import {
-  FaReact,
-  FaNodeJs,
-  FaJava,
-  FaPhp,
-  FaPython,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaAndroid,
-} from "react-icons/fa";
-
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiMongodb,
-  SiPostgresql,
-  SiFlask,
-  SiSolidity,
-  SiSharp,
-  SiFirebase,
-  SiRedis,
-  SiGraphql,
-  SiDocker,
-  SiSpringboot,
-  SiLaravel,
-  SiBootstrap,
-  SiStreamlit,
-  SiPytorch,
-  SiKotlin,
-  SiMysql,
-} from "react-icons/si";
 
 export const navItems = [
   { name: "Home", path: "/" },
