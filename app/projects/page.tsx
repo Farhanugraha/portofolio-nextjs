@@ -1,6 +1,6 @@
 import ProjectsClientUI from "./ProjectsClientUI";
 import ProjectsNotFound from "./ProjectsNotFound";
-import projects from "../../data/projects";
+import projects from "@data/projects";
 import { redirect } from "next/navigation";
 
 export default async function ProjectsPage(props: {

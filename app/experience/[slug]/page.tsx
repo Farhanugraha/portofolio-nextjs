@@ -3,13 +3,13 @@ import path from "path";
 import fs from "fs";
 import { compileMDX } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
-import work from "../../../data/work";
-import AnimatedArticle from "../../../components/AnimatedArticle";
+import work from "@data/work";
+import AnimatedArticle from "@components/AnimatedArticle";
 import StackIcon from "tech-stack-icons";
-import { techStackMap } from "../../../lib/constants";
-import { Timeline, TimelineItem } from "../../../components/mdx/Timeline";
-import { pageParams } from "../../../lib/type";
-import BackToPageButton from "../../../components/BackToPageButton";
+import { techStackMap } from "@lib/constants";
+import { Timeline, TimelineItem } from "@components/mdx/Timeline";
+import { pageParams } from "@lib/type";
+import BackToPageButton from "@components/BackToPageButton";
 import remark_gfm from "remark-gfm";
 
 export async function generateStaticParams() {
