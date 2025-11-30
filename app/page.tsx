@@ -38,7 +38,7 @@ export default function Home() {
         <div className="flex justify-center mb-4">
           <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-lg border-4 border-white dark:border-gray-700">
             <Image
-              src="/photo/profilepict.jpg"
+              src="/photo/profilepicture.jpg"
               alt="Farhan Nugraha"
               fill
               className="object-cover"
@@ -47,7 +47,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-          Hi, I&apos;m Farhan Nugraha 👋
+          Hi, I&apos;m Farhan Nugraha
         </h1>
 
         <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto text-left mb-6 leading-relaxed">
