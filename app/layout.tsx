@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <head>
-        <title>Farhan's Portofolio</title>
+        <title>Farhan Nugraha</title>
         <link rel="icon" href="/icons/favicon.ico" />
       </head>
 
