@@ -48,7 +48,6 @@ export const techStackMap: Record<string, string> = {
   Blade: "laravel",
   Streamlit: "streamlit",
   Pytorch: "pytorch",
-  Katalon: "katalon",
 };
 
 export const appVersion = packageJson.version;
