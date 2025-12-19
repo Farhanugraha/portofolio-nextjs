@@ -34,7 +34,7 @@ const work = [
   },
   {
     slug: "Bangkitorg",
-    company: "Bangkit Academy ",
+    company: "Bangkit Academy",
     title: "Android Mobile Development Student",
     start: "Aug 2023",
     end: "Jan 2024",
@@ -42,6 +42,17 @@ const work = [
       "Studied and developed Android applications with Kotlin, Jetpack Compose, and Firebase, building the DeepCare app with ML-powered ICU outcome predictions.",
     locations: ["On-site", "Palembang-Indonesia"],
     logoUrl: "/work/android100.svg",
+  },
+  {
+    slug: "Btncorp",
+    company: "Bank Tabungan Negara",
+    title: "Software Quality Assurance",
+    start: "Dec 2025",
+    end: "Present",
+    description:
+      "Automated mobile testing using Katalon Studio and Appium to ensure application stability and functionality.",
+    locations: ["On-site", "Jakarta-Indonesia"],
+    logoUrl: "/work/btn.svg",
   },
 ];
 
